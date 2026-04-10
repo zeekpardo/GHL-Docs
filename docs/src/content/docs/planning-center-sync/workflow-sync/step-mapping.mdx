@@ -1,0 +1,32 @@
+---
+title: Step Mapping
+description: How to customize which Planning Center workflow steps map to which MinistryFlow pipeline stages.
+---
+
+After mapping a workflow to a pipeline, you can customize exactly which workflow steps correspond to which pipeline stages.
+
+## Viewing the step mapping
+
+1. Go to the **Workflows** page and switch to the **Mapped** tab.
+2. Click the workflow name to expand the row.
+3. The step mapping editor will appear, showing each Planning Center workflow step with a dropdown to select the corresponding MinistryFlow pipeline stage.
+
+## Editing the mapping
+
+Each row shows:
+
+- **Planning Center step** — The step name from the workflow (read-only).
+- **MinistryFlow stage** — A dropdown listing all stages in the mapped pipeline, sorted by position. Select the stage this step should map to, or choose "Unmapped" to skip it.
+
+After making your changes, click **Save** to apply the new mapping.
+
+## How the mapping affects sync
+
+- **Mapped steps** — When a card moves to a mapped step, the corresponding opportunity moves to the mapped stage (and vice versa).
+- **Unmapped steps** — If a card moves to a step that is not mapped to any stage, the opportunity will be moved to the first stage in the pipeline as a fallback.
+
+## Tips
+
+- If your workflow and pipeline have the same number of steps/stages in the same order, the auto-mapping will likely be correct out of the box.
+- If your pipeline has fewer stages than the workflow has steps, you can map multiple steps to the same stage.
+- You can change the mapping at any time. Changes apply to future sync events — previously synced cards and opportunities are not retroactively moved.

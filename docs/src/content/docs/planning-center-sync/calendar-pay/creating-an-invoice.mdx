@@ -1,0 +1,50 @@
+---
+title: Creating an Invoice
+description: How to trigger automatic invoice creation by tagging a Planning Center calendar event.
+---
+
+Once CalendarPay is [set up](/calendar-pay/setup), creating an invoice is as simple as tagging an event in Planning Center.
+
+## Steps
+
+1. Open a calendar event in Planning Center.
+2. Make sure the **"Rental Contact Info (MF-XXXX)"** resource is attached and the billing questions are filled in:
+   - **Event / resource fee (USD)** — The amount to charge (required).
+   - **Pricing type** — "Per event" for a flat fee, or "Per day" to multiply by the event's duration.
+   - **Billing contact email** — Where the invoice will be sent (required).
+   - **Billing contact name** — The name on the invoice.
+   - **Organization / company name** — The organization being billed.
+   - **Invoice due in (days)** — Payment deadline (defaults to 30 days if left blank).
+3. Apply the **"Send Invoice (MF-XXXX)"** tag to the event.
+
+## What happens next
+
+Within a few minutes (events are checked every 2 minutes):
+
+1. MinistryFlow detects the tagged event.
+2. The billing answers are read from the resource request.
+3. A contact is created (or matched) in your MinistryFlow account using the billing email.
+4. An invoice is generated with:
+   - Your church's business details (name, address, logo) pulled from your MinistryFlow account settings.
+   - One line item with the event name and calculated amount.
+   - The due date based on today's date plus the "due in days" value.
+5. The invoice is emailed to the billing contact.
+6. The **Send Invoice** tag is removed and replaced with **Invoice Sent** on the event.
+
+## Skipped events
+
+An event will be skipped (no invoice created) if:
+
+- The **fee** is missing or zero.
+- The **billing contact email** is missing or not a valid email address.
+
+If an event is skipped, it will not appear in your CalendarPay logs. Make sure the required fields are filled in before applying the Send Invoice tag.
+
+## Invoice details
+
+The invoice includes:
+
+- **Title:** "INVOICE"
+- **Number prefix:** "INV-"
+- **Line item:** The event name, with a description showing either the flat fee or the per-day calculation (e.g., "$100/day x 3 days").
+- **Business details:** Your church's name, email, phone, address, and logo as configured in your MinistryFlow account.

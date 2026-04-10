@@ -59,7 +59,13 @@ export default defineConfig({
 				{
 					label: 'Planning Center Sync',
 					collapsed: true,
-					autogenerate: { directory: 'planning-center-sync' },
+					items: [
+						{ label: 'Getting Started', collapsed: true, autogenerate: { directory: 'planning-center-sync/getting-started' } },
+						{ label: 'Integrations', collapsed: true, autogenerate: { directory: 'planning-center-sync/integrations' } },
+						{ label: 'List Sync', collapsed: true, autogenerate: { directory: 'planning-center-sync/list-sync' } },
+						{ label: 'Workflow Sync', collapsed: true, autogenerate: { directory: 'planning-center-sync/workflow-sync' } },
+						{ label: 'Calendar Pay', collapsed: true, autogenerate: { directory: 'planning-center-sync/calendar-pay' } },
+					],
 				},
 				{
 					label: 'Contacts & CRM',

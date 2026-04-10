@@ -1,0 +1,61 @@
+---
+title: Sync Settings
+description: Configure age filters and source filters to control which contacts are synced.
+---
+
+MinistryFlow gives you control over which contacts get synced between Planning Center and your MinistryFlow account. These settings apply globally to all sync operations — contact sync, list sync, and workflow sync.
+
+## Age filter
+
+By default, MinistryFlow skips contacts under a minimum age to comply with data privacy requirements.
+
+- **Enforce minimum age** — Toggle this on or off. Enabled by default.
+- **Minimum age** — Set the age threshold (1–99). Defaults to 13.
+
+When enabled, any Planning Center person whose birthdate puts them under the minimum age will be skipped during sync. They will appear in your skipped contacts count with a reason of "underage."
+
+To change the age filter, go to **Settings > Integrations > Planning Center** and adjust the toggle and age input.
+
+## Source filter
+
+The source filter controls which MinistryFlow contacts get synced back to Planning Center based on how they were created. This prevents test data or unwanted contacts from being pushed to Planning Center.
+
+To configure source filters, go to **Settings > Integrations** and find the source filter section (visible when both integrations are connected).
+
+### How it works
+
+Every contact in MinistryFlow has an attribution source that describes how they were created. You can select which sources should be included in the sync:
+
+| Source | Description |
+|--------|-------------|
+| CRM UI | Contacts created manually in the CRM or via CSV import |
+| Third-Party | Contacts from third-party integrations |
+| Direct traffic | Contacts from forms or order forms |
+| Organic Search | Contacts from organic search traffic |
+| Paid Search | Contacts from paid search campaigns |
+| Paid Social | Contacts from paid social media campaigns |
+| Social media | Contacts from social media (Facebook, Instagram, TikTok, LinkedIn, Twitter, YouTube) |
+| Referrals | Contacts from referral links |
+| Others | Contacts from conversations, phone calls, or other social channels |
+| MinistryFlow Calendar Pay | Contacts created by the CalendarPay feature |
+
+### Sub-filters
+
+Some sources have sub-filters (called "mediums") that let you be more specific. For example, under **Social media** you can choose to only include contacts from Facebook and Instagram but exclude TikTok.
+
+Sub-filters are only available for sources that have known mediums. When you check a source, its available sub-filters will appear.
+
+### Custom sources
+
+If you have contacts with custom attribution sources not in the list above, you can add them manually. Type the source name in the custom sources input and press Enter to add it.
+
+## Initial sync
+
+When both integrations are connected, you can trigger a **bulk sync** from the MinistryFlow tab. This processes all existing contacts and syncs them according to your current filter settings.
+
+- Click **Re-sync** to start a bulk sync.
+- Progress is shown in real time with a progress bar and running count.
+- After the sync completes, you will see totals for contacts created, updated, and skipped.
+- Click on any stat number to see the individual contacts in that category.
+
+The initial sync respects both the age filter and source filter settings. You can re-run it at any time — it will pick up any contacts that were added or changed since the last run.

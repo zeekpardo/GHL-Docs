@@ -1,0 +1,42 @@
+---
+title: Integrations Overview
+description: An overview of the MinistryFlow integrations settings page.
+---
+
+The Integrations page is your central hub for managing how MinistryFlow connects to Planning Center and your MinistryFlow account. You can find it under **Settings > Integrations**.
+
+## Layout
+
+The page has three tabs:
+
+### Planning Center
+
+Shows your Planning Center connection status. When connected, you will see:
+
+- The connected Planning Center organization ID
+- A **Disconnect** button
+- [Sync configuration](/integrations/sync-settings) options (age filter settings)
+
+If your MinistryFlow account is also connected, additional source filter settings will appear here as well.
+
+### MinistryFlow
+
+Shows your MinistryFlow connection status. When connected, you will see:
+
+- The connected location ID
+- A **Disconnect** button
+- [Source filter settings](/integrations/sync-settings) for controlling which contacts sync
+- **Sync stats** showing the status of your last bulk sync, including counts for synced, created, updated, and skipped contacts
+- A **Re-sync** button to trigger a fresh bulk sync
+
+### Calendar
+
+Shows your [CalendarPay](/calendar-pay/overview) configuration, including the setup status and event logs.
+
+## Connection status
+
+Each integration card shows one of these states:
+
+- **Not connected** — Click Connect to begin the OAuth flow.
+- **Connected** — The integration is active and working.
+- **Needs reconnect** — The authorization has expired. A yellow banner will appear at the top of the page prompting you to reconnect. See [Troubleshooting](/integrations/troubleshooting) for details.

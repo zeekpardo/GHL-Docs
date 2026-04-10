@@ -1,0 +1,36 @@
+---
+title: List Sync Overview
+description: Understand how MinistryFlow syncs Planning Center lists to MinistryFlow tags.
+---
+
+List sync keeps your Planning Center lists in sync with MinistryFlow by converting each list's members into tagged contacts. When a person is on a Planning Center list, their corresponding MinistryFlow contact gets a tag applied automatically.
+
+## How it works
+
+1. You enable a Planning Center list for syncing.
+2. MinistryFlow creates a tag in your MinistryFlow account based on the list name.
+3. All people on that list are synced as contacts (or matched to existing contacts) and tagged.
+4. When people are added or removed from the list in Planning Center, the tags are updated on the next sync.
+
+## Tag naming
+
+Each synced list gets a MinistryFlow tag with this format:
+
+```
+{list name}_{list id}
+```
+
+For example, a list called "Youth Group" with ID `12345` would produce the tag `youth_group_12345`. The tag name is shown on each list card so you always know exactly what tag to reference in your automations.
+
+## What gets synced
+
+- **People on the list** are synced as MinistryFlow contacts with the list tag applied.
+- **People removed from the list** have the tag removed from their MinistryFlow contact on the next sync.
+- **Skipped contacts** (underage, no contact info) are tracked but not synced. You can see the skip reason in the synced list details.
+
+## When syncing happens
+
+- **Manual sync** — You can trigger a sync at any time from the synced lists table.
+- **Initial sync** — Happens automatically when you first enable a list.
+
+Each sync processes people in batches to stay within API rate limits. You will see a progress bar while a sync is running.

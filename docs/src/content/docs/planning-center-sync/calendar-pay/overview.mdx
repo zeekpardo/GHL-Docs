@@ -1,0 +1,36 @@
+---
+title: CalendarPay Overview
+description: Automatically generate and send invoices from Planning Center calendar events.
+---
+
+CalendarPay automates facility rental invoicing for your church. When a Planning Center calendar event is tagged with "Send Invoice," MinistryFlow automatically generates an invoice, emails it to the billing contact, and tracks payment status — all without manual data entry.
+
+## How it works
+
+1. A staff member tags a Planning Center calendar event with the **Send Invoice** tag.
+2. MinistryFlow detects the tagged event (checked every 2 minutes).
+3. MinistryFlow reads the billing details from the event's resource request answers.
+4. An invoice is created and emailed to the billing contact automatically.
+5. The **Send Invoice** tag is replaced with **Invoice Sent** on the event.
+6. When payment is confirmed, the **Paid** tag is applied.
+
+## The MF code
+
+Each church gets a unique code (shown as `MF-XXXX`) that namespaces all CalendarPay resources — tags, resource questions, and tag groups. This ensures that multiple churches sharing a Planning Center account do not interfere with each other.
+
+You will see your MF code on the CalendarPay settings page.
+
+## Prerequisites
+
+- Both [Planning Center](/getting-started/connecting-planning-center) and [MinistryFlow](/getting-started/connecting-ministryflow) must be connected.
+- CalendarPay must be set up (which creates the required tags and resource in Planning Center). See [Setup](/calendar-pay/setup).
+
+## What CalendarPay creates in Planning Center
+
+During setup, MinistryFlow creates the following in your Planning Center account:
+
+- A **tag group** called "Event invoicing (MF-XXXX)"
+- Three **tags** within that group: Send Invoice, Invoice Sent, and Paid
+- A **calendar resource** called "Rental Contact Info (MF-XXXX)" with billing questions
+
+These are described in detail in the [Setup](/calendar-pay/setup) guide.

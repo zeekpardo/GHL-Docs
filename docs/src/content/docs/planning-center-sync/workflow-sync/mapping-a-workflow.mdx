@@ -1,0 +1,41 @@
+---
+title: Mapping a Workflow
+description: How to map a Planning Center workflow to a MinistryFlow pipeline.
+---
+
+To start syncing a workflow, you need to map it to a MinistryFlow pipeline. This tells MinistryFlow which pipeline should mirror the workflow's cards.
+
+## Prerequisites
+
+Both [Planning Center](/getting-started/connecting-planning-center) and [MinistryFlow](/getting-started/connecting-ministryflow) must be connected.
+
+## Steps
+
+1. Navigate to the **Workflows** page in MinistryFlow.
+2. Click the **Add** tab.
+3. Search for the Planning Center workflow you want to map. Results appear as you type.
+4. Optionally, click a workflow to expand it and preview its steps.
+5. Click **Select Workflow** on the one you want to map.
+6. A pipeline selector will appear. Choose the MinistryFlow pipeline this workflow should map to.
+7. An **auto-mapping preview** will show how workflow steps will be paired with pipeline stages (matched by position order).
+8. Click **Map** to create the mapping.
+
+## Auto-mapping
+
+When you map a workflow to a pipeline, MinistryFlow automatically pairs steps to stages by their position:
+
+- Step 1 maps to Stage 1
+- Step 2 maps to Stage 2
+- And so on...
+
+If the workflow has more steps than the pipeline has stages (or vice versa), only the overlapping positions are mapped. You can [customize the mapping](/workflow-sync/step-mapping) after creation.
+
+## After mapping
+
+Once mapped, the workflow appears in the **Mapped** tab. From there you can:
+
+- Click the workflow name to expand and [edit the step mapping](/workflow-sync/step-mapping)
+- See the sync status and event count
+- Delete the mapping if it is no longer needed
+
+Changes in either system will begin syncing immediately through webhooks.

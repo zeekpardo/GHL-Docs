@@ -1,0 +1,39 @@
+---
+title: Enabling a List
+description: How to search for and enable a Planning Center list for syncing.
+---
+
+To start syncing a Planning Center list, you need to find it and enable it from the List Sync page.
+
+## Prerequisites
+
+Both [Planning Center](/getting-started/connecting-planning-center) and [MinistryFlow](/getting-started/connecting-ministryflow) must be connected.
+
+## Steps
+
+1. Navigate to the **Lists** page in MinistryFlow.
+2. Click the **Add** tab to search for available Planning Center lists.
+3. Type the name of the list you want to sync. Results will appear as you type.
+4. Each result shows:
+   - The list name
+   - The MinistryFlow tag that will be created (e.g., `youth_group_12345`)
+   - The number of people on the list
+5. Click **Enable** on the list you want to sync.
+
+After enabling, the list moves to the **Synced** tab and an initial sync begins automatically. You will see a progress bar while the sync runs.
+
+## Tag format
+
+The MinistryFlow tag is derived from the list name and ID:
+
+```
+{list name}_{list id}
+```
+
+All characters are lowercased and spaces are replaced with underscores. This tag is what you will use in your MinistryFlow automations and workflows to target people from that list.
+
+You can click the tag badge on any list to copy it to your clipboard.
+
+## Multiple lists
+
+You can enable as many lists as you need. Each list gets its own unique tag. A single contact can have multiple list tags if they belong to multiple lists.

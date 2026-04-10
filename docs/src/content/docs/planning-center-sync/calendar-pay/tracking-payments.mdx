@@ -1,0 +1,46 @@
+---
+title: Tracking Payments
+description: How to monitor invoice statuses and payment progress in CalendarPay.
+---
+
+After an invoice is sent, you can track its status from the CalendarPay logs page.
+
+## Tag lifecycle
+
+The tags on a Planning Center calendar event reflect the current invoice status:
+
+| Tag on event | Meaning |
+|-------------|---------|
+| **Send Invoice (MF-XXXX)** | Invoice requested, not yet processed |
+| **Invoice Sent (MF-XXXX)** | Invoice was emailed to the billing contact |
+| **Paid (MF-XXXX)** | Payment has been confirmed |
+
+As the invoice progresses, tags are updated automatically. You can also see the current status in the CalendarPay logs.
+
+## CalendarPay logs
+
+The logs page shows all processed events with the following details:
+
+| Column | Description |
+|--------|-------------|
+| **Event** | The Planning Center event name |
+| **Type** | The pricing type (per event or per day) |
+| **Amount** | The invoice total in USD |
+| **Status** | Current status badge (see below) |
+| **Date** | When the invoice was processed |
+
+### Status badges
+
+| Status | Color | Meaning |
+|--------|-------|---------|
+| **Created** | Blue | Invoice was created but not yet sent (e.g., if the send step encountered an issue) |
+| **Sent** | Purple | Invoice has been emailed to the billing contact |
+| **Paid** | Green | Payment has been confirmed |
+
+The logs are paginated (20 per page) and can be filtered by status.
+
+## Monitoring tips
+
+- Check the logs page regularly to see if any invoices are stuck in "Created" status — this may indicate a sending issue.
+- The **Paid** tag on the Planning Center event is the easiest way for your team to see at a glance which rentals have been paid.
+- If an invoice was not sent (stuck at "Created"), try reconnecting your MinistryFlow account and the system will retry on the next poll cycle.

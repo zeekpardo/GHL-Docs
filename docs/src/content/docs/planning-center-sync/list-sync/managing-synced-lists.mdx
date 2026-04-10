@@ -1,0 +1,51 @@
+---
+title: Managing Synced Lists
+description: How to refresh, disable, and monitor your synced Planning Center lists.
+---
+
+Once you have lists synced, you can manage them from the **Synced** tab on the Lists page.
+
+## Synced lists table
+
+Each synced list shows:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | The Planning Center list name, with the MinistryFlow tag shown below it |
+| **Status** | Current sync status (success, running, error) |
+| **Last sync** | How long ago the last sync completed |
+| **People** | Number of contacts synced — click to see the full list |
+| **Skipped** | Number of contacts skipped — click to see skip reasons |
+
+## Refreshing a list
+
+Click the refresh icon button on any list row to trigger a new sync. This will:
+
+1. Fetch the current members of the Planning Center list.
+2. Add tags to any new members.
+3. Remove tags from contacts no longer on the list.
+4. Update the people and skipped counts.
+
+A progress bar will appear while the sync runs.
+
+## Disabling a list
+
+Click the toggle button on a list row to disable it. Disabling a list stops future syncs but does **not** remove the tag from contacts that were already synced. To re-enable, click the toggle again.
+
+## Skipped contacts
+
+Contacts can be skipped during sync for these reasons:
+
+- **Underage** — The person's age is below your [minimum age setting](/integrations/sync-settings). Skipped to comply with data privacy requirements.
+- **No contact info** — The person has no email address or phone number, so they cannot be matched to a MinistryFlow contact.
+
+Click the skipped count on any list to open a dialog showing each skipped contact and the reason they were skipped.
+
+## Sync errors
+
+If a sync fails, the status column will show "error." Common causes include:
+
+- An expired Planning Center or MinistryFlow connection — check for a reconnect banner on the Integrations page.
+- Temporary API issues — try refreshing the list again after a few minutes.
+
+If errors persist, see the [troubleshooting guide](/integrations/troubleshooting).

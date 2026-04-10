@@ -1,0 +1,40 @@
+---
+title: Workflow Sync Overview
+description: Understand how MinistryFlow syncs Planning Center workflows with MinistryFlow pipelines.
+---
+
+Workflow sync connects Planning Center workflows to MinistryFlow pipelines, keeping workflow cards and pipeline opportunities in sync bidirectionally.
+
+## How it works
+
+A Planning Center **workflow** is a series of steps that a person moves through (e.g., "New Member Follow-Up" with steps like "Welcome Email Sent," "Assigned to Group," "Completed"). A MinistryFlow **pipeline** is a series of stages that an opportunity moves through.
+
+When you map a workflow to a pipeline:
+
+- **Planning Center to MinistryFlow** — When a card is added, moved, or removed in a Planning Center workflow, the corresponding opportunity in the MinistryFlow pipeline is created, moved, or deleted.
+- **MinistryFlow to Planning Center** — When an opportunity is created, moved to a different stage, or deleted in MinistryFlow, the corresponding workflow card in Planning Center is created, moved, or removed.
+
+## Key concepts
+
+| Planning Center | MinistryFlow | Description |
+|----------------|--------------|-------------|
+| Workflow | Pipeline | The overall process |
+| Workflow step | Pipeline stage | A position within the process |
+| Workflow card | Opportunity | A person moving through the process |
+
+## Bidirectional sync
+
+Changes flow in both directions automatically:
+
+- Add a card in Planning Center → an opportunity appears in MinistryFlow
+- Move an opportunity in MinistryFlow → the card moves in Planning Center
+- Remove a card in Planning Center → the opportunity is deleted in MinistryFlow
+- Delete an opportunity in MinistryFlow → the card is removed in Planning Center
+
+Loop prevention ensures that a change originating in one system does not bounce back and trigger an infinite loop. Each synced pair is tracked with a direction and timestamp — if a change arrives within 30 seconds of one going the other direction, it is skipped.
+
+## Getting started
+
+1. Make sure both [Planning Center](/getting-started/connecting-planning-center) and [MinistryFlow](/getting-started/connecting-ministryflow) are connected.
+2. [Map a workflow to a pipeline](/workflow-sync/mapping-a-workflow).
+3. Optionally [customize the step-to-stage mapping](/workflow-sync/step-mapping).

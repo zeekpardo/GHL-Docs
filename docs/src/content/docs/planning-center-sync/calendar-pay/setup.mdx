@@ -1,0 +1,49 @@
+---
+title: CalendarPay Setup
+description: What MinistryFlow creates in Planning Center when you set up CalendarPay.
+---
+
+When you enable CalendarPay, MinistryFlow creates several resources in your Planning Center account to support the invoicing workflow.
+
+## What gets created
+
+### Tag group and tags
+
+A tag group called **"Event invoicing (MF-XXXX)"** is created with three tags:
+
+| Tag | Purpose |
+|-----|---------|
+| **Send Invoice (MF-XXXX)** | Apply this tag to a calendar event to trigger invoice creation. |
+| **Invoice Sent (MF-XXXX)** | Applied automatically after the invoice is emailed. The "Send Invoice" tag is removed at this point. |
+| **Paid (MF-XXXX)** | Applied when payment is confirmed. |
+
+The tag lifecycle for an event is: **Send Invoice** → **Invoice Sent** → **Paid**.
+
+### Calendar resource
+
+A calendar resource called **"Rental Contact Info (MF-XXXX)"** is created with six questions that capture billing information:
+
+| Question | Type | Description |
+|----------|------|-------------|
+| Event / resource fee (USD) | Text | The dollar amount to invoice |
+| Pricing type | Dropdown | "Per event" (flat fee) or "Per day" (multiplied by event duration) |
+| Organization / company name | Text | The name that appears on the invoice |
+| Billing contact name | Text | The person responsible for payment |
+| Billing contact email | Text | Where the invoice is sent |
+| Invoice due in (days) | Text | Number of days until payment is due (defaults to 30) |
+
+## How to use the resource
+
+When creating or editing a calendar event in Planning Center:
+
+1. Add the **"Rental Contact Info (MF-XXXX)"** resource to the event.
+2. Fill in the billing questions (fee, pricing type, contact info).
+3. When you are ready to send the invoice, apply the **"Send Invoice (MF-XXXX)"** tag to the event.
+
+MinistryFlow will pick up the tagged event, read the answers, and generate the invoice automatically.
+
+## Per-day pricing
+
+If you select "Per day" as the pricing type, MinistryFlow calculates the total by multiplying the fee by the number of days the event spans. For example, a 3-day event with a $100/day fee produces a $300 invoice.
+
+The day count is inclusive — an event from March 1 to March 3 counts as 3 days.

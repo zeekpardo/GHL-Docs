@@ -1,0 +1,44 @@
+---
+title: Connecting MinistryFlow
+description: How to connect your MinistryFlow account to enable contact and pipeline sync.
+---
+
+Connecting your MinistryFlow account allows the system to create and update contacts, apply tags, manage pipeline opportunities, and send invoices on your behalf.
+
+## Prerequisites
+
+- A MinistryFlow account (your church's CRM account)
+- Administrator access in MinistryFlow settings
+
+## Steps
+
+1. Open your MinistryFlow settings and navigate to the **Integrations** page.
+2. Switch to the **MinistryFlow** tab and click **Connect**.
+3. You will be redirected to authorize MinistryFlow's integration. Review the requested permissions and click **Allow**.
+4. You will be redirected back to the Integrations page. The MinistryFlow card should now show a "Connected" status along with your location ID.
+
+## What happens after connecting
+
+With your MinistryFlow account connected, the system can:
+
+- Create and update contacts in your MinistryFlow account
+- Apply tags to contacts (used by list sync and CalendarPay)
+- Create and manage opportunities in your pipelines (used by workflow sync)
+- Create and send invoices (used by CalendarPay)
+
+## Both connections required
+
+Most MinistryFlow features require **both** Planning Center and MinistryFlow to be connected:
+
+| Feature | Planning Center | MinistryFlow |
+|---------|:-:|:-:|
+| Contact sync | Required | Required |
+| List sync | Required | Required |
+| Workflow sync | Required | Required |
+| CalendarPay | Required | Required |
+
+Once both are connected, you can [configure your sync settings](/integrations/sync-settings) and start enabling features.
+
+## Disconnecting
+
+Click **Disconnect** on the MinistryFlow card to revoke access. Previously synced data will remain in both systems, but no new syncing will occur.

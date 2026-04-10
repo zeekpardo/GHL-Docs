@@ -1,0 +1,60 @@
+---
+title: Troubleshooting
+description: Common integration issues and how to resolve them.
+---
+
+## "Needs reconnect" banner
+
+If you see a yellow banner at the top of the page saying an integration needs to be reconnected, it means the OAuth authorization has expired or been revoked.
+
+**To fix it:**
+
+1. Go to **Settings > Integrations**.
+2. Click **Disconnect** on the affected integration.
+3. Click **Connect** to re-authorize.
+
+This can happen if:
+
+- The authorization token expired (tokens have a limited lifetime)
+- Someone revoked MinistryFlow's access from within Planning Center or your MinistryFlow account settings
+- The connected account's permissions changed
+
+After reconnecting, all your sync settings, mapped lists, and mapped workflows are preserved. You do not need to reconfigure anything.
+
+## Contacts not syncing
+
+If contacts are not appearing in the other system, check these common causes:
+
+### Age filter is blocking them
+
+If you have the minimum age filter enabled, contacts without a birthdate or under the minimum age will be skipped. Check your [sync settings](/integrations/sync-settings) and review the skipped contacts count on the MinistryFlow tab.
+
+### Source filter is blocking them
+
+Contacts from MinistryFlow are only synced to Planning Center if their attribution source matches your source filter. If a contact was created via a source you haven't enabled, it will be skipped.
+
+### Missing contact information
+
+Contacts without an email address or phone number cannot be matched across systems and will be skipped. They will appear in your skipped count with a reason of "no contact info."
+
+### Integration disconnected
+
+If either Planning Center or MinistryFlow shows as disconnected, no syncing will occur. Reconnect the integration to resume syncing.
+
+## Sync appears stuck
+
+If the sync status shows "running" for an extended period:
+
+1. Wait a few minutes — large syncs with thousands of contacts take time, as they are processed in batches to avoid rate limits.
+2. If the status does not change after 10 minutes, try clicking **Re-sync** to start a fresh sync.
+3. If the problem persists, disconnect and reconnect both integrations, then trigger the sync again.
+
+## Duplicate contacts
+
+MinistryFlow matches contacts between systems using email address first, then phone number. If a contact exists in both systems with different email addresses and phone numbers, they may not be matched and could appear as duplicates.
+
+To prevent duplicates, make sure contacts have consistent email addresses or phone numbers across both systems.
+
+## Need more help?
+
+Contact us at [hello@noba.cc](mailto:hello@noba.cc) and we will help you troubleshoot.
