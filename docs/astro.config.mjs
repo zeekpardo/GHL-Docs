@@ -26,29 +26,17 @@ export const locales = {
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
 
-const site = NETLIFY_PREVIEW_SITE || 'https://starlight.astro.build/';
+const site = NETLIFY_PREVIEW_SITE || 'https://help.example.com/';
 const ogUrl = new URL('og.jpg?v=1', site).href;
-const ogImageAlt = 'Make your docs shine with Starlight';
+const ogImageAlt = 'Help Center';
 
 export default defineConfig({
 	site,
 	trailingSlash: 'always',
 	integrations: [
 		starlight({
-			title: 'Starlight',
-			logo: {
-				light: '/src/assets/logo-light.svg',
-				dark: '/src/assets/logo-dark.svg',
-				replacesTitle: true,
-			},
+			title: 'Help Center',
 			lastUpdated: true,
-			editLink: {
-				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
-			},
-			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' },
-				{ icon: 'discord', label: 'Discord', href: 'https://astro.build/chat' },
-			],
 			head: [
 				{
 					tag: 'script',
@@ -71,114 +59,127 @@ export default defineConfig({
 			locales,
 			sidebar: [
 				{
-					label: 'Start Here',
-					translations: {
-						de: 'Beginne hier',
-						es: 'Comienza aqui',
-						ja: 'ここからはじめる',
-						fr: 'Commencez ici',
-						it: 'Inizia qui',
-						id: 'Mulai dari sini',
-						'zh-CN': '从这里开始',
-						'pt-BR': 'Comece Aqui',
-						'pt-PT': 'Comece Aqui',
-						ko: '시작 안내',
-						tr: 'Buradan Başlayın',
-						ru: 'Первые шаги',
-						hi: 'यहाँ से शुरू करे',
-						uk: 'Почніть звідси',
-					},
+					label: 'Dashboard & Reporting',
+					collapsed: true,
 					items: [
-						'getting-started',
-						'manual-setup',
-						{
-							label: 'Environmental Impact',
-							slug: 'environmental-impact',
-							translations: {
-								de: 'Umweltbelastung',
-								es: 'Documentación ecológica',
-								ja: '環境への負荷',
-								fr: 'Impact environnemental',
-								it: 'Impatto ambientale',
-								id: 'Dampak terhadap lingkungan',
-								'zh-CN': '环境影响',
-								'pt-BR': 'Impacto Ambiental',
-								'pt-PT': 'Impacto Ambiental',
-								ko: '환경적 영향',
-								tr: 'Çevre Etkisi',
-								ru: 'Влияние на окружающую среду',
-								hi: 'पर्यावरणीय प्रभाव',
-								uk: 'Вплив на довкілля',
-							},
-						},
+						{ label: 'Dashboard', collapsed: true, autogenerate: { directory: 'dashboard' } },
+						{ label: 'Reporting', collapsed: true, autogenerate: { directory: 'reporting' } },
 					],
 				},
 				{
-					label: 'Guides',
-					translations: {
-						de: 'Anleitungen',
-						es: 'Guías',
-						ja: 'ガイド',
-						fr: 'Guides',
-						it: 'Guide',
-						id: 'Panduan',
-						'zh-CN': '指南',
-						'pt-BR': 'Guias',
-						'pt-PT': 'Guias',
-						ko: '가이드',
-						tr: 'Rehber',
-						ru: 'Руководства',
-						hi: 'गाइड',
-						uk: 'Ґайди',
-					},
-					autogenerate: { directory: 'guides' },
+					label: 'Contacts & CRM',
+					collapsed: true,
+					items: [
+						{ label: 'Contacts', collapsed: true, autogenerate: { directory: 'contacts' } },
+						{ label: 'Opportunities', collapsed: true, autogenerate: { directory: 'opportunities' } },
+						{ label: 'Custom Objects', collapsed: true, autogenerate: { directory: 'custom-objects' } },
+					],
 				},
 				{
-					label: 'Components',
-					translations: {
-						de: 'Komponenten',
-						fr: 'Composants',
-						ru: 'Компоненты',
-						ko: '컴포넌트',
-						ja: 'コンポーネント',
-						'zh-CN': '组件',
-						uk: 'Компоненти',
-					},
-					autogenerate: { directory: 'components' },
+					label: 'Conversations & Messaging',
+					collapsed: true,
+					items: [
+						{ label: 'Conversations', collapsed: true, autogenerate: { directory: 'conversations' } },
+						{ label: 'WhatsApp', collapsed: true, autogenerate: { directory: 'whatsapp' } },
+						{ label: 'Phone', collapsed: true, autogenerate: { directory: 'phone' } },
+						{ label: 'LC Phone', collapsed: true, autogenerate: { directory: 'lc-phone' } },
+						{ label: 'Communities', collapsed: true, autogenerate: { directory: 'communities' } },
+					],
 				},
 				{
-					label: 'Reference',
-					translations: {
-						de: 'Referenzen',
-						es: 'Referencias',
-						ja: 'リファレンス',
-						fr: 'Référence',
-						it: 'Riferimenti',
-						id: 'Referensi',
-						'zh-CN': '参考',
-						'pt-BR': 'Referência',
-						ko: '참조',
-						tr: 'Referanslar',
-						ru: 'Справочник',
-						hi: 'संदर्भ',
-						uk: 'Довідник',
-					},
-					autogenerate: { directory: 'reference' },
+					label: 'Workflows & Automation',
+					collapsed: true,
+					items: [
+						{ label: 'Workflow', collapsed: true, autogenerate: { directory: 'workflow' } },
+						{ label: 'Workflow Triggers', collapsed: true, autogenerate: { directory: 'workflow-triggers' } },
+						{ label: 'Workflow Actions', collapsed: true, autogenerate: { directory: 'workflow-actions' } },
+						{ label: 'Workflow Guides', collapsed: true, autogenerate: { directory: 'workflow-guides' } },
+						{ label: 'Premium Triggers & Actions', collapsed: true, autogenerate: { directory: 'workflow-premium-triggers-and-actions' } },
+						{ label: 'Triggers', collapsed: true, autogenerate: { directory: 'triggers' } },
+						{ label: 'Campaigns (Automation)', collapsed: true, autogenerate: { directory: 'campaigns-automation' } },
+					],
 				},
 				{
-					label: 'Resources',
-					translations: {
-						de: 'Ressourcen',
-						'zh-CN': '资源',
-						fr: 'Ressources',
-						'pt-BR': 'Recursos',
-						'pt-PT': 'Recursos',
-						ja: 'リソース',
-						ru: 'Ресурсы',
-						ko: '리소스',
-						uk: 'Ресурси',
-					},
-					autogenerate: { directory: 'resources' },
+					label: 'Sites & Content',
+					collapsed: true,
+					items: [
+						{ label: 'Funnels & Websites', collapsed: true, autogenerate: { directory: 'funnels-and-websites' } },
+						{ label: 'Site Builder', collapsed: true, autogenerate: { directory: 'site-builder' } },
+						{ label: 'Blogs', collapsed: true, autogenerate: { directory: 'blogs' } },
+						{ label: 'Forms', collapsed: true, autogenerate: { directory: 'forms' } },
+						{ label: 'Memberships', collapsed: true, autogenerate: { directory: 'memberships' } },
+						{ label: 'Webinars', collapsed: true, autogenerate: { directory: 'webinars' } },
+						{ label: 'Quizzes', collapsed: true, autogenerate: { directory: 'quizzes' } },
+						{ label: 'Brand Boards', collapsed: true, autogenerate: { directory: 'brand-boards' } },
+					],
+				},
+				{
+					label: 'Marketing',
+					collapsed: true,
+					items: [
+						{ label: 'Facebook Ad Launcher', collapsed: true, autogenerate: { directory: 'facebook-ad-launcher' } },
+						{ label: 'Ad Manager', collapsed: true, autogenerate: { directory: 'ad-manager' } },
+						{ label: 'Social Media', collapsed: true, autogenerate: { directory: 'social-media' } },
+						{ label: 'Email Campaigns', collapsed: true, autogenerate: { directory: 'email-campaigns' } },
+						{ label: 'Email & SMTP', collapsed: true, autogenerate: { directory: 'email-smtp' } },
+						{ label: 'Reputation & Reviews', collapsed: true, autogenerate: { directory: 'reputation-management-and-reviews' } },
+					],
+				},
+				{
+					label: 'AI Features',
+					collapsed: true,
+					items: [
+						{ label: 'AI Features', collapsed: true, autogenerate: { directory: 'ai-features' } },
+						{ label: 'Conversation AI', collapsed: true, autogenerate: { directory: 'conversation-ai' } },
+						{ label: 'Voice AI', collapsed: true, autogenerate: { directory: 'voice-ai' } },
+					],
+				},
+				{
+					label: 'Payments & Commerce',
+					collapsed: true,
+					items: [
+						{ label: 'Payments', collapsed: true, autogenerate: { directory: 'payments' } },
+						{ label: 'Stores', collapsed: true, autogenerate: { directory: 'stores' } },
+						{ label: 'Affiliate', collapsed: true, autogenerate: { directory: 'affiliate' } },
+					],
+				},
+				{
+					label: 'Integrations',
+					collapsed: true,
+					items: [
+						{ label: 'Integrations', collapsed: true, autogenerate: { directory: 'integrations' } },
+						{ label: 'Mailgun', collapsed: true, autogenerate: { directory: 'mailgun' } },
+						{ label: 'WordPress', collapsed: true, autogenerate: { directory: 'wordpress' } },
+						{ label: 'Webhooks', collapsed: true, autogenerate: { directory: 'webhooks' } },
+					],
+				},
+				{
+					label: 'Settings & Admin',
+					collapsed: true,
+					items: [
+						{ label: 'Settings', collapsed: true, autogenerate: { directory: 'settings' } },
+						{ label: 'Domain', collapsed: true, autogenerate: { directory: 'domain' } },
+						{ label: 'White Label Suite', collapsed: true, autogenerate: { directory: 'white-label-suite' } },
+						{ label: 'Media Storage', collapsed: true, autogenerate: { directory: 'media-storage' } },
+						{ label: 'Timers', collapsed: true, autogenerate: { directory: 'timers' } },
+						{ label: 'Mobile App', collapsed: true, autogenerate: { directory: 'mobile-app' } },
+					],
+				},
+				{
+					label: 'Calendar & Services',
+					collapsed: true,
+					items: [
+						{ label: 'Calendar', collapsed: true, autogenerate: { directory: 'calendar' } },
+						{ label: 'Services', collapsed: true, autogenerate: { directory: 'services' } },
+					],
+				},
+				{
+					label: 'Troubleshooting & FAQ',
+					collapsed: true,
+					items: [
+						{ label: 'Troubleshooting', collapsed: true, autogenerate: { directory: 'troubleshooting' } },
+						{ label: '1000 FAQ', collapsed: true, autogenerate: { directory: '1000-faq' } },
+					],
 				},
 			],
 			expressiveCode: { shiki: { langs: [markdocGrammar] } },
