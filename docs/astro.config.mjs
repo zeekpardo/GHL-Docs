@@ -6,21 +6,8 @@ import markdocGrammar from './grammars/markdoc.tmLanguage.json';
 
 export const locales = {
 	root: { label: 'English', lang: 'en' },
-	de: { label: 'Deutsch', lang: 'de' },
-	es: { label: 'Español', lang: 'es' },
-	ja: { label: '日本語', lang: 'ja' },
-	fr: { label: 'Français', lang: 'fr' },
-	it: { label: 'Italiano', lang: 'it' },
-	id: { label: 'Bahasa Indonesia', lang: 'id' },
-	'zh-cn': { label: '简体中文', lang: 'zh-CN' },
-	'pt-br': { label: 'Português do Brasil', lang: 'pt-BR' },
-	'pt-pt': { label: 'Português', lang: 'pt-PT' },
-	ko: { label: '한국어', lang: 'ko' },
-	tr: { label: 'Türkçe', lang: 'tr' },
-	ru: { label: 'Русский', lang: 'ru' },
-	hi: { label: 'हिंदी', lang: 'hi' },
-	da: { label: 'Dansk', lang: 'da' },
-	uk: { label: 'Українська', lang: 'uk' },
+	// Spanish content exists but is hidden from the language picker for now
+	// es: { label: 'Español', lang: 'es' },
 };
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
@@ -59,12 +46,20 @@ export default defineConfig({
 			locales,
 			sidebar: [
 				{
-					label: 'Dashboard & Reporting',
+					label: 'Settings & Admin',
 					collapsed: true,
 					items: [
-						{ label: 'Dashboard', collapsed: true, autogenerate: { directory: 'dashboard' } },
-						{ label: 'Reporting', collapsed: true, autogenerate: { directory: 'reporting' } },
+						{ label: 'Settings', collapsed: true, autogenerate: { directory: 'settings' } },
+						{ label: 'Domain', collapsed: true, autogenerate: { directory: 'domain' } },
+						{ label: 'Media Storage', collapsed: true, autogenerate: { directory: 'media-storage' } },
+						{ label: 'Timers', collapsed: true, autogenerate: { directory: 'timers' } },
+						{ label: 'Mobile App', collapsed: true, autogenerate: { directory: 'mobile-app' } },
 					],
+				},
+				{
+					label: 'Planning Center Sync',
+					collapsed: true,
+					autogenerate: { directory: 'planning-center-sync' },
 				},
 				{
 					label: 'Contacts & CRM',
@@ -84,6 +79,14 @@ export default defineConfig({
 						{ label: 'Phone', collapsed: true, autogenerate: { directory: 'phone' } },
 						{ label: 'LC Phone', collapsed: true, autogenerate: { directory: 'lc-phone' } },
 						{ label: 'Communities', collapsed: true, autogenerate: { directory: 'communities' } },
+					],
+				},
+				{
+					label: 'Calendar & Services',
+					collapsed: true,
+					items: [
+						{ label: 'Calendar', collapsed: true, autogenerate: { directory: 'calendar' } },
+						{ label: 'Services', collapsed: true, autogenerate: { directory: 'services' } },
 					],
 				},
 				{
@@ -144,6 +147,14 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Dashboard & Reporting',
+					collapsed: true,
+					items: [
+						{ label: 'Dashboard', collapsed: true, autogenerate: { directory: 'dashboard' } },
+						{ label: 'Reporting', collapsed: true, autogenerate: { directory: 'reporting' } },
+					],
+				},
+				{
 					label: 'Integrations',
 					collapsed: true,
 					items: [
@@ -151,26 +162,6 @@ export default defineConfig({
 						{ label: 'Mailgun', collapsed: true, autogenerate: { directory: 'mailgun' } },
 						{ label: 'WordPress', collapsed: true, autogenerate: { directory: 'wordpress' } },
 						{ label: 'Webhooks', collapsed: true, autogenerate: { directory: 'webhooks' } },
-					],
-				},
-				{
-					label: 'Settings & Admin',
-					collapsed: true,
-					items: [
-						{ label: 'Settings', collapsed: true, autogenerate: { directory: 'settings' } },
-						{ label: 'Domain', collapsed: true, autogenerate: { directory: 'domain' } },
-						{ label: 'White Label Suite', collapsed: true, autogenerate: { directory: 'white-label-suite' } },
-						{ label: 'Media Storage', collapsed: true, autogenerate: { directory: 'media-storage' } },
-						{ label: 'Timers', collapsed: true, autogenerate: { directory: 'timers' } },
-						{ label: 'Mobile App', collapsed: true, autogenerate: { directory: 'mobile-app' } },
-					],
-				},
-				{
-					label: 'Calendar & Services',
-					collapsed: true,
-					items: [
-						{ label: 'Calendar', collapsed: true, autogenerate: { directory: 'calendar' } },
-						{ label: 'Services', collapsed: true, autogenerate: { directory: 'services' } },
 					],
 				},
 				{
